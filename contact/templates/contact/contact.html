@@ -1,0 +1,53 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form action="{% url 'contact:contact_page' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{form.subject.label}}
+                {{form.subject}}
+                {{form.subject.errors}}
+            </div>
+            <div class="col">
+                {{form.full_name.label}}
+                {{form.full_name}}
+                {{form.full_name.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.email.label}}
+                {{form.email}}
+                {{form.email.errors}}
+            </div>
+            <div class="col">
+                {{form.phone_number.label}}
+                {{form.phone_number}}
+                {{form.phone_number.errors}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.text.label}}
+                {{form.text}}
+                {{form.text.errors}}
+            </div>
+        </div>
+        <br>
+        <input class="btn-primary-cm btn-with-icon mx-auto w-100" type="submit" value="ثبت و ارسال">
+    </div>
+</form>
+{% endblock %}
