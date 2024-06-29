@@ -15,5 +15,5 @@ class Product(models.Model) :
     provider_company = models.ForeignKey(Company , on_delete = models.CASCADE , null = True , blank = True)
     created = models.DateTimeField(auto_now_add = True)
     updated = models.DateTimeField(auto_now = True)
-    rating = models.FloatField(max_value = 5 , null = True , blank = True)
+    rating = models.FloatField(null = True , blank = True)
     
