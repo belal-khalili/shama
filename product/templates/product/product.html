@@ -10,39 +10,43 @@
 <br>
 <br>
 <br>
-<div style=display:flex>
-    <div class="card m-5" style="width: 18rem;">
+<br>
+<br>
+<div class="container">
+  <div class="row g-2">
+    {% for p in products %}
+    <div class="card col-4" >
         <img src="https://dkstatics-public.digikala.com/digikala-products/91697083237cc88c91fbf9a1bd76e23b4485bdb4_1712308134.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">PC GoodRatMand</h5>
-          <p class="card-text">Bia Bekhar Pool Mikham.</p>
-          <p class="card-text">200$</p>
-          <a href="#" class="btn btn-danger">Order</a>
+          <h5 class="card-title">{{p.name}}</h5>
+          <p class="card-text">{{p.description}}</p>
+          <h5 class="card-text">{{p.price}}$</h5>
+          <a href="#" class="btn btn-danger">خرید</a>
         </div>
+      </div>
+      {% endfor %}
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+    <div class="pagination">
+        <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+        {% for page in paginator %}
+        <a  href="#">{{paginator.page_range}}</a>
+        {% endfor %}
+        <a href="#" >{{paginator}}</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">...</a>
+        <a href="#">7</a>
+        <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
     </div>
-    <div class="card m-5" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/8f598b393464e90ba838cfa67210d32845f6bbae_1695640814.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Pc Kheyli GoodRatMand</h5>
-          <p class="card-text">Bazam Pool Mikhammmm Bia Bekhar.</p>
-          <p class="card-text">1000$</p>
-          <a href="#" class="btn btn-danger">order</a>
-        </div>
-    </div>
-    <div class="card m-5" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/40561e81b6afee7a0e4d730497eb87f9a39fa725_1683707269.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">PC zaiiiif</h5>
-          <p class="card-text">Na Ino Nakhar Arzoone.</p>
-          <p class="card-text">1$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
+  </div>
 </div>
 
 <!-- .............................................................. -->
-<div style=display:flex>
-    <div class="card m-5" style="width: 18rem;">
+<!-- <div style=display:flex class="row">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/aeb1f8625ba86098a96c4d6da00829fa2d20ed94_1697834683.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Daste Console</h5>
@@ -51,7 +55,7 @@
           <a href="#" class="btn btn-danger">Order</a>
         </div>
     </div>
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/7f0c6c207a3c72b266fc96466ff2011b48bad06f_1703511082.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">PS5</h5>
@@ -60,7 +64,7 @@
           <a href="#" class="btn btn-danger">Order</a>
         </div>
     </div>
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/8724b0a0ed0d14e414bcddb44017c36212b9849e_1695215901.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">XBox</h5>
@@ -70,10 +74,9 @@
         </div>
     </div>
 </div>
-<!-- ................................... -->
 
 <div style=display:flex>
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/4dff946933740f6240c02d902f444d1f61cc9cd4_1716385120.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Laptop Gaming</h5>
@@ -82,7 +85,7 @@
           <a href="#" class="btn btn-danger">Order</a>
         </div>
     </div>
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/b69297cd8570f2ae6d0a6e0f6f8a8f5be8992ca5_1671473986.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Laptop Gaming Gavi</h5>
@@ -91,7 +94,7 @@
           <a href="#" class="btn btn-danger">Order</a>
         </div>
     </div>
-    <div class="card m-5" style="width: 18rem;">
+    <div class="card col-4" style="width: 18rem;">
         <img src="https://dkstatics-public.digikala.com/digikala-products/850cba472f7bf1b1f47ce2bfb17a3d84c0a3a3b5_1709495371.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Laptop Gaming Kheyli Kheyli Gavi</h5>
@@ -100,6 +103,8 @@
           <a href="#" class="btn btn-danger">Order</a>
         </div>
     </div>
+</div> -->
+
 </div>
 
 {% endblock %}
