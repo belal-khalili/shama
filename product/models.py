@@ -12,7 +12,6 @@ class Product(models.Model) :
     description = models.TextField()
     brand = models.CharField(max_length = 255 , null = True , blank = True)
     price = models.CharField(max_length = 255)
-    slug = models.SlugField()
     stock = models.IntegerField()
     available = models.BooleanField()
     provider_company = models.ForeignKey(Company , on_delete = models.CASCADE , null = True , blank = True)

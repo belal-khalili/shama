@@ -20,9 +20,9 @@
                 <div class="title-breadcrumb-special dt-sl mb-3">
                     <div class="breadcrumb dt-sl">
                         <nav>
-                            <a href="#">موبایل</a>
-                            <a href="#">سامسونگ</a>
-                            <a href="#">مدل Galaxy A50 SM-A505F/DS</a>
+                            <a href="#">{{product.category}}</a>
+                            <a href="#">{{product.brand }}</a>
+                            <a href="#">مدل {{product.name}}</a>
                         </nav>
                     </div>
                 </div>
@@ -116,9 +116,9 @@
                         <div class="col-lg-8 col-md-6 py-2">
                             <div class="product-info dt-sl">
                                 <div class="product-title dt-sl">
-                                    <h1>گوشی موبایل سامسونگ مدل Galaxy A50 SM-A505F/DS دو سیم کارت ظرفیت 128گیگابایت
+                                    <h1>{{ product.name }}
                                     </h1>
-                                    <h3>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</h3>
+                                    
                                 </div>
                                 <div class="product-variant dt-sl">
                                     <div class="section-title text-sm-title title-wide no-after-title-wide mb-0">
@@ -190,7 +190,7 @@
                                     <h2>کد محصول:225566</h2>
                                 </div>
                                 <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
-                                    <h2>قیمت : <span class="price">۳,۵۶۰,۰۰۰ تومان</span> </h2>
+                                    <h2>قیمت : <span class="price">{{ product.price }} تومان</span> </h2>
                                 </div>
                                 <div class="dt-sl mt-4">
                                     <a href="#" class="btn-primary-cm btn-with-icon">
@@ -1290,4 +1290,4 @@
             </div>
         </main>
         <!-- End main-content -->
-{% end block %}
+{% endblock %}
