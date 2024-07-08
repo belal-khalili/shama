@@ -14,3 +14,8 @@ class RegisterForm(forms.Form):
             raise ValidationError('رمز عبور و تکرار آن باهم مطابق نیستند')
         else:
             return password
+        
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='ایمیل')
+    password = forms.CharField(label='پسورد',widget=forms.PasswordInput())
