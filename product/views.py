@@ -9,6 +9,7 @@ def product(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     return render(request,'product/product.html',{'products':page_obj,'paginator':paginator})
+    
 def single_product(request , id):
     data = Product.objects.get(id = id)
     if data.available == True :

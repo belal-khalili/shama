@@ -1,0 +1,56 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row g-2">
+    {% for p in products %}
+    <a href = "{% url 'product:single_product' id=p.id %}">
+
+    <div class="card col-4" >
+      {% if p.image %}
+        <img src="{{p.image.url}}" class="card-img-top" alt="...">
+      {% else %}
+      <img src="" class="card-img-top" alt="{{p.brand}}">
+      {% endif %}
+
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p class="card-text">{{p.description}}</p>
+          <h5 class="card-text">{{p.price}}$</h5>
+          <a href="#" class="btn btn-danger">خرید</a>
+        </div>
+      </div>
+    </a>
+      {% endfor %}
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+    <div class="pagination">
+        <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+        {% for page in paginator %}
+        <a  href="#">{{paginator.page_range}}</a>
+        {% endfor %}
+        <a href="#" >{{paginator}}</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">...</a>
+        <a href="#">7</a>
+        <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

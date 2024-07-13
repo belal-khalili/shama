@@ -1,4 +1,5 @@
 from django.db import models
+from category.models import Category
 class Company(models.Model):
     name = models.CharField(max_length = 255)
     address = models.CharField(max_length = 255 , null = True , blank = True)
@@ -10,7 +11,7 @@ class Company(models.Model):
         return self.name
 class Product(models.Model) :
     name = models.CharField(max_length = 255)
-    category = models.CharField(max_length = 255)
+    category = models.ManyToManyField(Category)
     description = models.TextField()
     brand = models.CharField(max_length = 255 , null = True , blank = True)
     price = models.CharField(max_length = 255)
