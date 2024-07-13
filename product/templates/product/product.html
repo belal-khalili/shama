@@ -16,8 +16,14 @@
   <div class="row g-2">
     {% for p in products %}
     <a href = "{% url 'product:single_product' id=p.id %}">
-    <div class="card mr-2" >
-        <img src="https://dkstatics-public.digikala.com/digikala-products/91697083237cc88c91fbf9a1bd76e23b4485bdb4_1712308134.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
+
+    <div class="card col-4" >
+      {% if p.image %}
+        <img src="{{p.image.url}}" class="card-img-top" alt="...">
+      {% else %}
+      <img src="" class="card-img-top" alt="{{p.brand}}">
+      {% endif %}
+
         <div class="card-body">
           <h5 class="card-title">{{p.name}}</h5>
           <p class="card-text">{{p.description}}</p>

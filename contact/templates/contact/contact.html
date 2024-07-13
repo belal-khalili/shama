@@ -12,7 +12,7 @@
 <br>
 <br>
 
-<form action="{% url 'contact:contact_page' %}" method="post">
+<form enctype="multipart/form-data" action="{% url 'contact:contact_page' %}" method="post">
     {% csrf_token %}
     <div class="container">
         <div class="row">
@@ -44,8 +44,15 @@
                 {{form.text.label}}
                 {{form.text}}
                 {{form.text.errors}}
-            </div>
-        </div>
+            </div>                   
+        </div>    
+        <div class="row">
+            <div class="col">
+                
+                {{form.image}}
+                {{form.text.errors}}
+            </div>                   
+        </div>           
         <br>
         <input class="btn-primary-cm btn-with-icon mx-auto w-100" type="submit" value="ثبت و ارسال">
     </div>
