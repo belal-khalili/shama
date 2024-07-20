@@ -14,6 +14,18 @@
 <br>
 <div class="container">
   <div class="row g-2">
+<<<<<<< HEAD
+    {% for product in page_obj %}
+      <a href = "{% url 'product:single_product' id=product.id %}">
+        <div class="card mr-2" >
+          <img src="https://dkstatics-public.digikala.com/digikala-products/91697083237cc88c91fbf9a1bd76e23b4485bdb4_1712308134.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
+           <div class="card-body">
+              <h5 class="card-title">{{p.name}}</h5>
+              <p class="card-text">{{p.description}}</p>
+               <h5 class="card-text">{{p.price}}$</h5>
+               <a href="#" class="btn btn-danger">خرید</a>
+          </div>
+=======
     {% for p in products %}
     <a href = "{% url 'product:single_product' id=p.id %}">
 
@@ -29,90 +41,35 @@
           <p class="card-text">{{p.description}}</p>
           <h5 class="card-text">{{p.price}}$</h5>
           <a href="#" class="btn btn-danger">خرید</a>
+>>>>>>> 7ed3781f563c02db9eaa68446697fda31f83f901
         </div>
-      </div>
-    </a>
+      </a>
+  </div>
       {% endfor %}
 </div>
+
 <br>
-<div class="row">
-  <div class="col-12">
-    <div class="pagination">
-        <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
-        {% for page in paginator %}
-        <a  href="#">{{paginator.page_range}}</a>
-        {% endfor %}
-        <a href="#" >{{paginator}}</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">...</a>
-        <a href="#">7</a>
-        <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
-    </div>
-  </div>
-</div>
 
-<!-- .............................................................. -->
-<!-- <div style=display:flex class="row">
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/aeb1f8625ba86098a96c4d6da00829fa2d20ed94_1697834683.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Daste Console</h5>
-          <p class="card-text">Yani Inam Nemikhari.</p>
-          <p class="card-text">60$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/7f0c6c207a3c72b266fc96466ff2011b48bad06f_1703511082.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">PS5</h5>
-          <p class="card-text">Biaaaaaa Bekharrrrr Arzoon Midamm Biaaa</p>
-          <p class="card-text">999999999$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/8724b0a0ed0d14e414bcddb44017c36212b9849e_1695215901.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">XBox</h5>
-          <p class="card-text">dige kam ovordam</p>
-          <p class="card-text">987654321$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-</div>
-
-<div style=display:flex>
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/4dff946933740f6240c02d902f444d1f61cc9cd4_1716385120.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Laptop Gaming</h5>
-          <p class="card-text">Bah Bah.</p>
-          <p class="card-text">600$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/b69297cd8570f2ae6d0a6e0f6f8a8f5be8992ca5_1671473986.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Laptop Gaming Gavi</h5>
-          <p class="card-text">Aziat nakoooon bia bekharrr!!!</p>
-          <p class="card-text">800$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-    <div class="card col-4" style="width: 18rem;">
-        <img src="https://dkstatics-public.digikala.com/digikala-products/850cba472f7bf1b1f47ce2bfb17a3d84c0a3a3b5_1709495371.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Laptop Gaming Kheyli Kheyli Gavi</h5>
-          <p class="card-text">nemikharii???</p>
-          <p class="card-text">88888777777$</p>
-          <a href="#" class="btn btn-danger">Order</a>
-        </div>
-    </div>
-</div> -->
+<!-- pagination links -->
+<div>
 
 </div>
+
+<!-- pagination -->
+
+<div class="pagination">
+  {% if page_obj.has_previous %}
+  <a href="/products/?page={{page_obj.previous_page_number}}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+  {% endif %}
+  {% for page in paginator.page_range %}
+  <a href="/products/?page={{page}}" {% if page == page_obj.number %} class="active-page"{% endif %}>{{page}}</a>
+  {% endfor %}
+  {% if page_obj.has_next %}
+  <a href="/products/?page={{page_obj.next_page_number}}" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+  {% endif %}
+</div>
+
+<!-- end pagination -->
+
 
 {% endblock %}
