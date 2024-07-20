@@ -8,9 +8,8 @@
     <meta name="theme-color" content="#f7858d">
     <meta name="msapplication-navbutton-color" content="#f7858d">
     <meta name="apple-mobile-web-app-status-bar-style" content="#f7858d">
-    <title>{% block title %} didikala | Index Page {% endblock %}</title>
+    <title>didikala | blog Page</title>
     <!-- Font Icon -->
-    
     <link rel="stylesheet" href="/static/css/vendor/font-awesome.min.css">
     <link rel="stylesheet" href="/static/css/vendor/materialdesignicons.min.css">
     <!-- Bootstrap -->
@@ -25,7 +24,6 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/colors/default.css" id="colorswitch">
-    {% block style %} {% endblock %}
 </head>
 
 <body>
@@ -96,15 +94,9 @@
                                             <i class="mdi mdi-account-edit-outline"></i>ویرایش حساب کاربری
                                         </a>
                                         <div class="dropdown-divider" role="presentation"></div>
-                                        {% if user.is_authenticated %}
-                                            <a class="dropdown-item" href="{% url 'account:logout_page' %}">
-                                                <i class="mdi mdi-logout-variant"></i>خروج
-                                            </a>
-                                        {% else %}
-                                        <a class="dropdown-item" href="{% url 'account:login_page' %}">
-                                            <i class="mdi mdi-logout-variant"></i>ورود به حساب کاربری
+                                        <a class="dropdown-item" href="#">
+                                            <i class="mdi mdi-logout-variant"></i>خروج
                                         </a>
-                                        {% endif %}
                                     </div>
                                 </li>
                             </ul>
@@ -123,16 +115,246 @@
                             <li class="list-item category-list">
                                 <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
                                 <ul>
-                                    {% for category in categorys %}
                                     <li>
-                                        <a href="{% url 'category:category_page' cat_name=category.link %}">{{category.title}}</a>
+                                        <a href="#">کالای دیجیتال</a>
                                         <ul class="row">
                                             <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
                                             <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
                                             <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">اسپیکر بلوتوث و با سیم</a></li>
+                                            <li class="sublist--title"><a href="#">هارد، فلش و SSD</a></li>
+                                            <li class="sublist--title"><a href="#">دوربین</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین عکاسی دیجیتال</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین‌ ورزشی و فیلم برداری</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین‌ چاپ سریع</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی دوربین</a></li>
+                                            <li class="sublist--item"><a href="#">لنز</a></li>
+                                            <li class="sublist--item"><a href="#">کیف</a></li>
+                                            <li class="sublist--item"><a href="#">کارت حافظه</a></li>
+                                            <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">اسپیکر بلوتوث و با سیم</a></li>
+                                            <li class="sublist--title"><a href="#">هارد، فلش و SSD</a></li>
+                                            <li class="sublist--title"><a href="#">دوربین</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین عکاسی دیجیتال</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین‌ ورزشی و فیلم برداری</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین‌ چاپ سریع</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی دوربین</a></li>
+                                            <li class="sublist--item"><a href="#">لنز</a></li>
+                                            <li class="sublist--item"><a href="#">کیف</a></li>
+                                            <li class="sublist--item"><a href="#">کارت حافظه</a></li>
+                                            <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
                                         </ul>
                                     </li>
-                                    {% endfor %}
+                                    <li>
+                                        <a href="#">خودرو، ابزار و تجهیزات صنعتی</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">مد و پوشاک</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">زیبایی و سلامت</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">خانه و آشپزخانه</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">لنز</a></li>
+                                            <li class="sublist--item"><a href="#">کیف</a></li>
+                                            <li class="sublist--item"><a href="#">کارت حافظه</a></li>
+                                            <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">کتاب، لوازم تحریر و هنر</a>
+                                        <ul class="row">
+                                            <li class="sublist--item"><a href="#">کارت حافظه</a></li>
+                                            <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">اسباب بازی، کودک و نوزاد</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">لنز</a></li>
+                                            <li class="sublist--item"><a href="#">کیف</a></li>
+                                            <li class="sublist--item"><a href="#">کارت حافظه</a></li>
+                                            <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
+                                            <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
+                                            <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">ورزش و سفر</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
+                                            <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
+                                            <li class="sublist--item"><a href="#">سامسونگ</a></li>
+                                            <li class="sublist--item"><a href="#">هوآوی</a></li>
+                                            <li class="sublist--item"><a href="#">اپل</a></li>
+                                            <li class="sublist--item"><a href="#">شیائومی</a></li>
+                                            <li class="sublist--item"><a href="#">آنر</a></li>
+                                            <li class="sublist--item"><a href="#">نوکیا</a></li>
+                                            <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">خوردنی و آشامیدنی</a>
+                                        <ul class="row">
+                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            <li class="sublist--title"><a href="#">برندها</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <!-- mega menu 3 column -->
@@ -469,7 +691,7 @@
                         <div class="side-menu">
                             <div class="logo-nav-res dt-sl text-center">
                                 <a href="#">
-                                    <img src="/static/img/logo.png" alt="">
+                                    <img src="assets/img/logo.png" alt="">
                                 </a>
                             </div>
                             <div class="search-box-side-menu dt-sl text-center mt-2 mb-3">
@@ -677,9 +899,314 @@
         </header>
         <!-- End header -->
         <!-- Start main-content -->
-        {% block content %}
+        <main class="main-content dt-sl mb-3">
+            <div class="container main-container">
+                <div class="row mt-5 pt-5">
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-3">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/1.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
 
-        {% endblock %}
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            سایتو فروشگاهتو طراحی کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/2.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            امنیت سایتت رو تامین کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/3.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            اینستاگرام را پول ساز کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/4.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            سایت خودت رو چند زبانه کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/5.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            تخصصی واسه وردپرس پلاگین بنویس
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/4.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            سایت خودت رو چند زبانه کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/2.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            امنیت سایتت رو تامین کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/3.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            اینستاگرام را پول ساز کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/4.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            سایت خودت رو چند زبانه کن
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                                <div class="post-card">
+                                    <div class="post-thumbnail">
+                                        <a href="#">
+                                            <img src="/static/img/post-thumbnail/5.png" alt="">
+                                        </a>
+                                        <span class="post-tag">مقاله</span>
+
+                                    </div>
+                                    <div class="post-title">
+                                        <a href="#">
+                                            تخصصی واسه وردپرس پلاگین بنویس
+                                        </a>
+                                        <span class="post-date">
+                                            چهارشنبه، 18 دی 1398
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="pagination">
+                                    <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+                                    <a href="#">1</a>
+                                    <a href="#" class="active-page">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">...</a>
+                                    <a href="#">7</a>
+                                    <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-12 mb-3 sidebar sticky-sidebar">
+                        <div class="widget-posts dt-sn dt-sl mb-3 border-bottom rounded-0">
+                            <div class="title-sidebar dt-sl mb-3">
+                                <h3>جدیدترین نوشته ها</h3>
+                            </div>
+                            <div class="content-sidebar dt-sl">
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="item-thumb">
+                                            <a href="#" class="img-holder"
+                                                style="background-image: url('/static/img/post-thumbnail/1.png')"></a>
+                                        </div>
+                                        <p class="title">
+                                            <a href="#">سایت و فروشگاهتو طراحی کن</a>
+                                        </p>
+                                        <div class="item-meta">
+                                            <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="item-thumb">
+                                            <a href="#" class="img-holder"
+                                                style="background-image: url('/static/img/post-thumbnail/2.png')"></a>
+                                        </div>
+                                        <p class="title">
+                                            <a href="#">امنیت سایتت رو تامین کن</a>
+                                        </p>
+                                        <div class="item-meta">
+                                            <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="item-thumb">
+                                            <a href="#" class="img-holder"
+                                                style="background-image: url('/static/img/post-thumbnail/3.png')"></a>
+                                        </div>
+                                        <p class="title">
+                                            <a href="#">اینستاگرام را پول ساز کن</a>
+                                        </p>
+                                        <div class="item-meta">
+                                            <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="item-thumb">
+                                            <a href="#" class="img-holder"
+                                                style="background-image: url('/static/img/post-thumbnail/4.png')"></a>
+                                        </div>
+                                        <p class="title">
+                                            <a href="#">سایت خودت رو چندزبانه کن</a>
+                                        </p>
+                                        <div class="item-meta">
+                                            <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dt-sn dt-sl border-bottom rounded-0 mb-3">
+                            <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
+                                <h2>دسته ها</h2>
+                            </div>
+                            <ul class="category-list">
+                                <li><a href="#">بهینه سازی</a></li>
+                                <li><a href="#">برنامه نویسی</a></li>
+                                <li><a href="#">طراحی سایت</a>
+                                    <ul>
+                                        <li><a href="#">وردپرس</a></li>
+                                        <li><a href="#">پلاگین نویسی</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">گرافیک</a></li>
+                            </ul>
+                        </div>
+                        <div class="dt-sn dt-sl border-bottom rounded-0">
+                            <div class="section-title text-sm-title title-wide no-after-title-wide mb-1">
+                                <h2>برچسبها</h2>
+                            </div>
+                            <ul class="tag-list">
+                                <li><a href="#">بهینه سازی</a></li>
+                                <li><a href="#">برنامه نویسی</a></li>
+                                <li><a href="#">طراحی سایت</a></li>
+                                <li><a href="#">وردپرس</a></li>
+                                <li><a href="#">پلاگین نویسی</a></li>
+                                <li><a href="#">گرافیک</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
         <!-- End main-content -->
         <!-- Start footer -->
         <footer class="main-footer dt-sl">
@@ -692,31 +1219,31 @@
                     <div class="row">
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="/static/img/svg/delivery.svg">
+                                <img src="assets/img/svg/delivery.svg">
                             </a>
                             <p>تحویل اکسپرس</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="/static/img/svg/contact-us.svg">
+                                <img src="assets/img/svg/contact-us.svg">
                             </a>
                             <p>پشتیبانی 24 ساعته</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="/static/img/svg/payment-terms.svg">
+                                <img src="assets/img/svg/payment-terms.svg">
                             </a>
                             <p>پرداخت درمحل</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="/static/img/svg/return-policy.svg">
+                                <img src="assets/img/svg/return-policy.svg">
                             </a>
                             <p>۷ روز ضمانت بازگشت</p>
                         </div>
                         <div class="service-item col">
                             <a href="#" target="_blank">
-                                <img src="/static/img/svg/origin-guarantee.svg">
+                                <img src="assets/img/svg/origin-guarantee.svg">
                             </a>
                             <p>ضمانت اصل بودن کالا</p>
                         </div>
@@ -834,8 +1361,8 @@
                             </p>
                         </div>
                         <div class="symbol col-12 col-lg-5">
-                            <a href="#" target="_blank"><img src="/static/img/symbol-01.png" alt=""></a>
-                            <a href="#" target="_blank"><img src="/static/img/symbol-02.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="assets/img/symbol-01.png" alt=""></a>
+                            <a href="#" target="_blank"><img src="assets/img/symbol-02.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -852,7 +1379,6 @@
         </footer>
         <!-- End footer -->
     </div>
-
     <!-- colorPanel -->
     <div id="colorswitch-option">
         <button><i class="mdi mdi-settings"></i></button>
