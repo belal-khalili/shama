@@ -15,19 +15,19 @@
 <div class="container">
   <div class="row g-2">
     {% for product in this_page %}
-    <a href = "{% url 'product:single_product' id=p.id %}">
+    <a href = "{% url 'product:single_product' id=product.id %}">
 
     <div class="card col-4" >
-      {% if p.image %}
+      {% if product.image %}
         <img src="{{p.image.url}}" class="card-img-top" alt="...">
       {% else %}
       <img src="" class="card-img-top" alt="{{p.brand}}">
       {% endif %}
 
         <div class="card-body">
-          <h5 class="card-title">{{p.name}}</h5>
-          <p class="card-text">{{p.description}}</p>
-          <h5 class="card-text">{{p.price}}$</h5>
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <h5 class="card-text">{{product.price}}$</h5>
           <a href="#" class="btn btn-danger">خرید</a>
         </div>
       </div>

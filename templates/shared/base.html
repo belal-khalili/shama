@@ -85,7 +85,7 @@
                                         <i class="mdi mdi-account-circle-outline"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
-                                        <a class="dropdown-item" href="account/">
+                                        <a class="dropdown-item" href="{% url 'account:profile_page' %}">
                                             <i class="mdi mdi-account-card-details-outline"></i>پروفایل
                                         </a>
                                         <a class="dropdown-item" href="#">
@@ -124,14 +124,19 @@
                                 <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
                                 <ul>
                                     {% for category in categorys %}
+                                     {% if category.parent == None %}
                                     <li>
                                         <a href="{% url 'category:category_page' cat_name=category.link %}">{{category.title}}</a>
                                         <ul class="row">
-                                            <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
-                                            <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
-                                            <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
+                                            {% for sub_cat in category.category_set.all %}
+                                            <li class="sublist--title"><a href="{% url 'category:category_page' cat_name=sub_cat.link %}">{{sub_cat.title}}</a></li>
+                                            {% for sub_sub_cat in sub_cat.category_set.all %}
+                                            <li class="sublist--item"><a href="{% url 'category:category_page' cat_name=sub_sub_cat.link %}">{{sub_sub_cat.title}}</a></li>
+                                            {% endfor %}
+                                            {% endfor %}
                                         </ul>
                                     </li>
+                                    {% endif %}
                                     {% endfor %}
                                 </ul>
                             </li>

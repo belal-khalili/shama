@@ -42,7 +42,6 @@ def login_view(request):
             else:
                 print('error')
         
-<<<<<<< HEAD
     return render(request, 'account/register.html',{'form':RegisterForm})
 
 
@@ -69,12 +68,9 @@ def bazdidakhir(request):
 
 def userinfo(request):
     return render(request, 'account/userinfo.html')
-=======
-    return render(request,'account/login.html',{'form':LoginForm})
 
 
 def logout_view(request):
     logout(request)
     return redirect(reverse('home_page'))
->>>>>>> 7ed3781f563c02db9eaa68446697fda31f83f901
     

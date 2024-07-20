@@ -4,7 +4,6 @@ from . import views
 app_name = 'account'
 
 urlpatterns = [
-<<<<<<< HEAD
     path('',views.profile,name='profile_page'),
     path('sefareshha/',views.sefareshha,name='sefareshha_page'),
     path('darkhastmarjui/',views.darkhastmarjui,name='darkhastmarjui_page'),
@@ -13,13 +12,7 @@ urlpatterns = [
     path('adresses/',views.adresses,name='adresses_page'),
     path('bazdidakhir/',views.bazdidakhir,name='bazdidakhir_page'),
     path('userinfo/',views.userinfo,name='userinfo_page'),
-
-    path('register/',views.register,name='register_page')
-
-
-=======
     path('register/',views.register,name='register_page'),
     path('login/',views.login_view,name='login_page'),
     path('logout/',views.logout_view,name='logout_page')
->>>>>>> 7ed3781f563c02db9eaa68446697fda31f83f901
 ]
