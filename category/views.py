@@ -12,3 +12,4 @@ def category_page(request,cat_name):
     this_page=paginator.get_page(page_number)
     print(data)
     return render(request, 'category/category.html',{"this_page" : this_page , "paginator" : paginator} )
+
