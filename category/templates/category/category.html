@@ -14,7 +14,7 @@
 <br>
 <div class="container">
   <div class="row g-2">
-    {% for p in products %}
+    {% for product in this_page %}
     <a href = "{% url 'product:single_product' id=p.id %}">
 
     <div class="card col-4" >
@@ -35,22 +35,17 @@
       {% endfor %}
 </div>
 <br>
-<div class="row">
-  <div class="col-12">
-    <div class="pagination">
-        <a href="#" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
-        {% for page in paginator %}
-        <a  href="#">{{paginator.page_range}}</a>
-        {% endfor %}
-        <a href="#" >{{paginator}}</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">...</a>
-        <a href="#">7</a>
-        <a href="#" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
-    </div>
-  </div>
+<div class="pagination">
+  {% if this_page.has_previous %}
+  <a href="/cat/cat_name/?page={{this_page.previous_page_number}}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+  {% endif %}
+  {% for page in paginator.page_range %}
+  <a href="/cat/cat_name/?page={{page}}" {% if page == this_page.number %} class="active-page" {% endif %}>{{page}}</a>
+  {% endfor %}
+  {% if this_page.has_next %}
+  <a href="/cat/cat_name/?page={{this_page.next_page_number}}" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+  {% endif %}
 </div>
-</div>
+
 
 {% endblock %}

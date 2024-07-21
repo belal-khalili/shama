@@ -1,4 +1,4 @@
-{% extends shared/base.html %}
+{% extends "shared/base.html" %}
 {% block content %}
 <main class="main-content dt-sl mb-3">
     <div class="container main-container">
@@ -12,7 +12,7 @@
                 </nav>
             </div>
             <div class="title-page dt-sl">
-                <h1>{{article.title }}</h1>
+                <h1>{{single_blog.title }}</h1>
             </div>
             <div class="post-rating">
                 <div class="star-rate" data-toggle="tooltip" data-placement="top" data-html="true" title=""
@@ -32,7 +32,7 @@
                     <div class="content-desc dt-sn dt-sl">
                         <header class="entry-header dt-sl mb-3">
                             <div class="post-meta date">
-                                <i class="mdi mdi-calendar-month"></i>1397/09/21
+                                <i class="mdi mdi-calendar-month"></i>{{single_blog.created}}
                             </div>
                             <div class="post-meta author">
                                 <i class="mdi mdi-account-circle-outline"></i>
@@ -45,13 +45,13 @@
                             </div>
                             <div class="post-meta category">
                                 <i class="mdi mdi-eye"></i>
-                                433 بازدید
+                                {{single_blog.views}}
                             </div>
                         </header>
                         <div class="post-thumbnail dt-sl">
                             <img src="./assets/img/post-thumbnail/291.jpg" alt="">
                         </div>
-                        <p>{{ article.content }}</p>
+                        <p>{{ single_blog.description }}</p>
                     </div>
                 </div>
                 <div class="comments-area dt-sl my-3">
@@ -241,46 +241,22 @@
                         <h3>جدیدترین نوشته ها</h3>
                     </div>
                     <div class="content-sidebar dt-sl">
+                        {% for article in newest_single_blogs %}
                         <div class="item">
                             <div class="item-inner">
                                 <div class="item-thumb">
                                     <a href="#" class="img-holder"
-                                        style="background-image: url('./assets/img/post-thumbnail/1.png')"></a>
+                                        style="background-image: url('{{article.image.url}}')"></a>
                                 </div>
                                 <p class="title">
-                                    <a href="#">سایت و فروشگاهتو طراحی کن</a>
+                                    <a href="{% url 'blog:single_blog_page' slug=article.slug %}">{{article.title}}</a>
                                 </p>
                                 <div class="item-meta">
-                                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
+                                    <span class="time">{{article.created}}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="item-inner">
-                                <div class="item-thumb">
-                                    <a href="#" class="img-holder"
-                                        style="background-image: url('./assets/img/post-thumbnail/2.png')"></a>
-                                </div>
-                                <p class="title">
-                                    <a href="#">امنیت سایتت رو تامین کن</a>
-                                </p>
-                                <div class="item-meta">
-                                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-inner">
-                                <div class="item-thumb">
-                                    <a href="#" class="img-holder"
-                                        style="background-image: url('./assets/img/post-thumbnail/3.png')"></a>
-                                </div>
-                                <p class="title">
-                                    <a href="#">اینستاگرام را پول ساز کن</a>
-                                </p>
-                                <div class="item-meta">
-                                    <span class="time">۱۰ مرداد ۱۳۹۸</span>
-                                </div>
+                        {% endfor %}
                             </div>
                         </div>
                         <div class="item">
