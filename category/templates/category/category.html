@@ -19,9 +19,12 @@
 
     <div class="card col-4" >
       {% if product.image %}
-        <img src="{{p.image.url}}" class="card-img-top" alt="...">
+
+        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+
+
       {% else %}
-      <img src="" class="card-img-top" alt="{{p.brand}}">
+      <img src="" class="card-img-top" alt="{{product.brand}}">
       {% endif %}
 
         <div class="card-body">
@@ -37,13 +40,13 @@
 <br>
 <div class="pagination">
   {% if this_page.has_previous %}
-  <a href="/cat/cat_name/?page={{this_page.previous_page_number}}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
+  <a href="/cat/{{cat_name}}/?page={{this_page.previous_page_number}}" class="prev"><i class="mdi mdi-chevron-double-right"></i></a>
   {% endif %}
   {% for page in paginator.page_range %}
-  <a href="/cat/cat_name/?page={{page}}" {% if page == this_page.number %} class="active-page" {% endif %}>{{page}}</a>
+  <a href="/cat/{{cat_name}}/?page={{page}}" {% if page == this_page.number %} class="active-page" {% endif %}>{{page}}</a>
   {% endfor %}
   {% if this_page.has_next %}
-  <a href="/cat/cat_name/?page={{this_page.next_page_number}}" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
+  <a href="/cat/{{cat_name}}/?page={{this_page.next_page_number}}" class="next"><i class="mdi mdi-chevron-double-left"></i></a>
   {% endif %}
 </div>
 
