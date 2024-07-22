@@ -79,13 +79,13 @@
                         <div class="col-md-4 col-6 topbar-left">
                             <ul class="nav float-left">
                                 <li class="nav-item account dropdown">
-                                    <a class="nav-link" href="account/" data-toggle="dropdown" aria-haspopup="true"
+                                    <a class="nav-link" href="{% url 'user_profile:profile_page' %}" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                         <span class="label-dropdown">حساب کاربری</span>
                                         <i class="mdi mdi-account-circle-outline"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left">
-                                        <a class="dropdown-item" href="{% url 'account:profile_page' %}">
+                                        <a class="dropdown-item" href="{% url 'user_profile:profile_page' %}">
                                             <i class="mdi mdi-account-card-details-outline"></i>پروفایل
                                         </a>
                                         <a class="dropdown-item" href="#">
@@ -123,7 +123,7 @@
                             <li class="list-item category-list">
                                 <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
                                 <ul>
-                                    {% for category in categorys %}
+                                    {% for category in category_page %}
                                      {% if category.parent == None %}
                                     <li>
                                         <a href="{% url 'category:category_page' cat_name=category.link %}">{{category.title}}</a>
