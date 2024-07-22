@@ -42,7 +42,32 @@ def login_view(request):
             else:
                 print('error')
         
-    return render(request,'account/login.html',{'form':LoginForm})
+    return render(request, 'account/register.html',{'form':RegisterForm})
+
+
+def profile(request):
+    return render(request, 'account/account.html')
+
+def sefareshha(request):
+    return render(request, 'account/sefareshha.html')
+    
+def darkhastmarjui(request):
+    return render(request, 'account/darkhastmarjui.html')
+
+def favoritelist(request):
+    return render(request, 'account/favoritelist.html')
+
+def nazarat(request):
+    return render(request, 'account/nazarat.html')
+
+def adresses(request):
+    return render(request, 'account/adresses.html')
+
+def bazdidakhir(request):
+    return render(request, 'account/bazdidakhir.html')
+
+def userinfo(request):
+    return render(request, 'account/userinfo.html')
 
 
 def logout_view(request):

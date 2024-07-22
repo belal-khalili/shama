@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'account',
     'category',
     'blog',
+    'user_profile'
 ]
 
 MIDDLEWARE = [

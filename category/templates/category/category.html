@@ -19,7 +19,10 @@
 
     <div class="card col-4" >
       {% if product.image %}
+
         <img src="{{product.image.url}}" class="card-img-top" alt="...">
+
+
       {% else %}
       <img src="" class="card-img-top" alt="{{product.brand}}">
       {% endif %}
