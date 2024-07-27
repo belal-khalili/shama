@@ -17,7 +17,7 @@
     {% for product in page_obj %}
       <a href = "{% url 'product:single_product' slug=product.slug %}">
         <div class="card mr-2" >
-          <img src="{{product.image.url}}" class="card-img-top" alt="...">
+          <img width="100px" src="{{product.image.url}}"  class="card-img-top" alt="...">
            <div class="card-body">
               <h5 class="card-title">{{product.name}}</h5>
               <p class="card-text">{{product.description}}</p>

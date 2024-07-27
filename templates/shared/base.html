@@ -123,7 +123,7 @@
                             <li class="list-item category-list">
                                 <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
                                 <ul>
-                                    {% for category in category_page %}
+                                    {% for category in categorys %}
                                      {% if category.parent == None %}
                                     <li>
                                         <a href="{% url 'category:category_page' cat_name=category.link %}">{{category.title}}</a>
@@ -349,7 +349,7 @@
                                 <a class="nav-link" href="#">
                                     <span class="label-dropdown">سبد خرید</span>
                                     <i class="mdi mdi-cart-outline"></i>
-                                    <span class="count">2</span>
+                                    <span id="cart_item_number" class="count">2</span>
                                 </a>
                                 <div class="header-cart-info">
                                     <div class="header-cart-info-header">
@@ -899,6 +899,7 @@
     <script src="/static/js/vendor/theia-sticky-sidebar.min.js"></script>
     <!-- Main JS File -->
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/custom.js"></script>
 </body>
 
 </html>
