@@ -12,4 +12,4 @@ def add_to_cart(request, product_id):
 
 
 def cart(request):
-    return HttpResponse('cart page')
+    return render(request, 'cart/cart.html')

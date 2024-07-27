@@ -4,7 +4,7 @@ from . import views
 app_name = 'user_profile'
 
 urlpatterns = [
-    path('',views.profile,name='profile_page'),
+    path('profile/',views.profile,name='profile_page'),
     path('sefareshha/',views.sefareshha,name='sefareshha_page'),
     path('darkhastmarjui/',views.darkhastmarjui,name='darkhastmarjui_page'),
     path('favoritelist/',views.favoritelist,name='favoritelist_page'),
