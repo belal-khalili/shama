@@ -2,17 +2,19 @@ from django.db import models
 from product.models import Product
 from account.models import User
 # Create your models here.
+
 class Cart(models.Model):
     is_paid = models.BooleanField(default=False)
     payment_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     
     def __str__(self) -> str:
         return f'{self.user.email} ({self.is_paid})'
 
 
 
-class CartDetail(models.Model):
+class CartItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     price = models.IntegerField(null=True, blank=True)

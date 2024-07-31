@@ -7,6 +7,7 @@ def slug_maker(name):
             name.pop(i)
             name.insert(i , "_")
     name = "".join(name)
+
 class Company(models.Model):
     name = models.CharField(max_length = 255)
     address = models.CharField(max_length = 255 , null = True , blank = True)
@@ -16,6 +17,7 @@ class Company(models.Model):
         verbose_name_plural = "کمپانی ها"
     def __str__(self) :
         return self.name
+    
 class Product(models.Model) :
     name = models.CharField(max_length = 255)
     category = models.ManyToManyField(Category)
@@ -30,7 +32,9 @@ class Product(models.Model) :
     updated = models.DateTimeField(auto_now = True)
     rating = models.FloatField(null = True , blank = True)
     image = models.ImageField(upload_to = "product" , null = True , blank = True)
+
     class Meta() :
+        verbose_name = "محصولات"
         verbose_name_plural = "محصولات"
     def __str__(self) :
         return self.name
