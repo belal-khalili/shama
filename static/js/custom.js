@@ -7,7 +7,7 @@ function add_to_cart(product_id){
 }
 
     function updateCartItemQuantity(cartItemId, action) {
-        fetch('http://127.0.0.1:8000/cart/update-cart-item-quantity/', {
+        fetch('http://127.0.0.1:8000/cart/update-cart-item-quantity', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -18,9 +18,11 @@ function add_to_cart(product_id){
         .then(response => response.json())
         .then(data => {
             if (data.status === 'updated') {
-                document.querySelector(`#cart-item-${cartItemId} .quantity`).innerText = data.quantity;
+                document.getElementById(`cart-item-${cartItemId}`).value = data.quantity;
+                // location.reload()
             } else if (data.status === 'deleted') {
-                document.querySelector(`#cart-item-${cartItemId}`).remove();
+                document.getElementById(`cart-item-element-${cartItemId}`).remove();
+                // location.reload()
             } else {
                 console.error(data.message);
             }
