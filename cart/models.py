@@ -5,7 +5,7 @@ from account.models import User
 
 class Cart(models.Model):
     is_paid = models.BooleanField(default=False)
-    payment_date = models.DateTimeField(auto_now_add=True)
+    payment_date = models.DateTimeField(auto_now_add=False, default=None, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     
