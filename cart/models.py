@@ -12,6 +12,13 @@ class Cart(models.Model):
     def __str__(self) -> str:
         return f'{self.user.email} ({self.is_paid})'
 
+    def cart_total_price(self):
+        total_price = 0
+        this_cart_items = self.cartitem_set.all()
+        for item in this_cart_items:
+            total_price += item.cartitem_total_price()
+        return total_price
+
 
 
 class CartItem(models.Model):
@@ -22,3 +29,6 @@ class CartItem(models.Model):
 
     def __str__(self) -> str:
         return f'{self.product.name} /  {self.cart.user.email}'
+    
+    def cartitem_total_price(self):
+        return int(self.product.price) * int(self.amount)
